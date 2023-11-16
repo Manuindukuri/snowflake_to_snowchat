@@ -26,3 +26,5 @@ WHERE TOTAL_COVID_TESTS IS NOT NULL
   -- Add similar conditions for other columns as needed;
 
 -- Select * from HOL_DB1.COVID_NYC.CLEANED_NYC_HEALTH_TESTS limit 100;
+
+Select * from HOL_DB1.COVID_NYC.CLEANED_NYC_HEALTH_TESTS limit 10000;
