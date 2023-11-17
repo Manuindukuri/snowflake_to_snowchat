@@ -6,14 +6,14 @@ import sys
 
 load_dotenv()
 
-def calculate_vaccination_rate(total_vaccinations, avg_daily_vaccinations):
-    if avg_daily_vaccinations > 0:
-        vaccination_rate = (total_vaccinations / avg_daily_vaccinations)
+def calculate_normalized_sales(sales_amount, total_cases):
+    if total_cases > 0:
+        normalized_sales = sales_amount / total_cases
     else:
-        vaccination_rate = 0
-    return vaccination_rate
+        normalized_sales = 0
+    return normalized_sales
 
-def fetch_data_from_view(country_filter=None):
+def fetch_data_for_country(country_name):
     snowflake_config = configparser.ConfigParser()
     snowflake_config.read(os.path.expanduser("~/.snowsql/config"))
 
@@ -39,13 +39,8 @@ def fetch_data_from_view(country_filter=None):
         # Create a cursor object
         cursor = connection.cursor()
 
-        # Build the query based on whether a country filter is provided
-        if country_filter:
-            query = f"SELECT * FROM HOL_DB1.ANALYTICS.COVID_VACCINATIONS_VIEW WHERE COUNTRY_REGION = '{country_filter}'"
-        else:
-            query = "SELECT * FROM HOL_DB1.ANALYTICS.COVID_VACCINATIONS_VIEW"
-
-        # Execute the query to fetch data from the view
+        # Build the query based on the user input
+        query = f"SELECT * FROM HOL_DB1.ANALYTICS.NORMALIZED_SALES WHERE COUNTRY_REGION = '{country_name}' limit 1"
         cursor.execute(query)
 
         # Fetch all rows from the result set
@@ -59,20 +54,21 @@ def fetch_data_from_view(country_filter=None):
         connection.close()
 
 if __name__ == "__main__":
-    # Allow the user to input the country region
-    country_filter = input("Enter the country region: ")
+    # Allow the user to input the country name
+    country_name = input("Enter the country name: ")
 
-    # Fetch data from the view with or without the country filter
-    data_from_view = fetch_data_from_view(country_filter)
+    # Fetch data from the view for the specified country
+    data_for_country = fetch_data_for_country(country_name)
 
-    # Process the data and calculate vaccination rate
-    for row in data_from_view:
-        year = row[0]
-        month = row[1]
-        country = row[2]
-        total_vaccinations = row[3]
-        avg_daily_vaccinations = row[4]
+    # Process the data and calculate normalized sales
+    for row in data_for_country:
+        country_region = row[0]
+        date = row[1]
+        total_cases = row[2]
+        retailer = row[3]
+        sales_amount = row[4]
+        product = row[5]
 
-        vaccination_rate = calculate_vaccination_rate(total_vaccinations, avg_daily_vaccinations)
+        normalized_sales = calculate_normalized_sales(sales_amount, total_cases)
 
-        print(f"Year: {year}, Month: {month}, Country: {country}, Vaccination Rate: {vaccination_rate}")
+        print(f"Country Region: {country_region}, Date: {date}, Retailer: {retailer}, Normalized Sales: {normalized_sales}")
