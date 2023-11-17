@@ -1,5 +1,4 @@
 import os
-import logging
 from dotenv import load_dotenv
 import snowflake.connector
 import pandas as pd
@@ -7,9 +6,6 @@ import streamlit as st
 
 # Load environment variables from the .env file
 load_dotenv()
-
-# Log metrics
-logging.basicConfig(level=logging.INFO)
 
 # Environment Variables
 snowflake_account = os.getenv("SNOWFLAKE_ACCOUNT")
