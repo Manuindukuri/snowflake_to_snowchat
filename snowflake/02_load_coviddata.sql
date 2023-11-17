@@ -66,3 +66,10 @@ Select * FROM COVID19_DATA.PUBLIC.OWID_VACCINATIONS Limit 1000;
 Select * From RETAILERS_AND_DISTRIBUTORS.PUBLIC.HARMONIZED_RETAILER_SALES LIMIT 1000;
 
 
+
+-- Create an empty table in the PUBLIC schema with the same structure
+
+
+
+
+
