@@ -14,12 +14,16 @@ def calculate_normalized_sales(sales_amount, total_cases):
     return normalized_sales
 
 def fetch_data_for_country(country_name):
-    user = os.getenv("username")
-    password = os.getenv("password")
-    account = os.getenv("accountname")
-    warehouse = os.getenv("warehousename")
-    database = os.getenv("dbname")
-    schema = os.getenv("rolename")  # Assuming schema is specified in the rolename field
+    snowflake_config = configparser.ConfigParser()
+    snowflake_config.read(os.path.expanduser("~/.snowsql/config"))
+
+    # Replace these placeholders with the actual section and option names from your config file
+    user = snowflake_config.get("connections.dev", "username")
+    password = snowflake_config.get("connections.dev", "password")
+    account = snowflake_config.get("connections.dev", "accountname")
+    warehouse = snowflake_config.get("connections.dev", "warehousename")
+    database = snowflake_config.get("connections.dev", "dbname")
+    schema = snowflake_config.get("connections.dev", "rolename")
 
     # Connect to Snowflake using stored credentials
     connection = snowflake.connector.connect(
