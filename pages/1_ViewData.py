@@ -37,7 +37,7 @@ def fetch_data(table_name):
         )
 
         # SQL query to select data from the table and limit to the first 10 rows
-        query = f'SELECT * FROM {table_name} LIMIT 10'
+        query = f'SELECT * FROM {table_name}'
 
         # Execute the query and fetch data into a Pandas DataFrame
         df = pd.read_sql(query, conn)
@@ -58,7 +58,7 @@ def pandas_table():
     for table in tables:
         data = fetch_data(table)
         if not data.empty:
-            st.subheader(f"First 10 rows of the table {table}")
+            st.subheader(f"Contents of the table {table}")
             st.dataframe(data)
             # Assuming you have a DataFrame 'data'
             data = pd.DataFrame({
