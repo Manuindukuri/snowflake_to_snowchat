@@ -8,6 +8,8 @@ streamlit = "*"
 python-dotenv = "*"
 pandas = "*"
 snowflake-connector-python = "*"
+sqlalchemy = "*"
+snowflake-sqlalchemy = "*"
 
 [dev-packages]
 

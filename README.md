@@ -13,8 +13,14 @@ SNOWFLAKE_ACCOUNT=""
 SNOWFLAKE_USER=""
 SNOWFLAKE_PASSWORD=""
 SNOWFLAKE_ROLE=""
-SNOWFLAKE_DATABASE="COVID19_EPIDEMIOLOGICAL_DATA"
-SNOWFLAKE_TABLE1="WHO_SITUATION_REPORTS"
-SNOWFLAKE_TABLE2="CT_US_COVID_TESTS"
-SNOWFLAKE_TABLE3="NYC_HEALTH_TESTS"
+SNOWFLAKE_DATABASE="HOL_DB1"
+SNOWFLAKE_TABLE1="COVID_WORLDWIDE"
+SNOWFLAKE_TABLE2="COVID_VACCINES"
+SNOWFLAKE_TABLE3="RETAIL_DATA"
 ```
+
+# Forked Repositories - Snowpark
+
+Manohar - https://github.com/Manuindukuri/snowflake_fork
+Prathamesh - https://github.com/PrathamHusky07/Snowpark_Pipelines
+Sarvesh - https://github.com/sarvesh3737/sfguide-data-engineering-with-snowpark-python
