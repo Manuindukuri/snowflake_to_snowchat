@@ -1,5 +1,5 @@
-import sys;
-import os;
+import sys
+import os
 
 ignore_folders = ['__pycache__', '.ipynb_checkpoints']
 
@@ -17,26 +17,27 @@ for (directory_path, directory_names, file_names) in os.walk(root_directory):
 
     # Skip any folders we want to ignore
     if base_name in ignore_folders:
-#        print(f"Skipping ignored folder {directory_path}")
         continue
 
     # An app.toml file in the folder is our indication that this folder contains
     # a snowcli Snowpark App
     if not "app.toml" in file_names:
-#        print(f"Skipping non-app folder {directory_path}")
         continue
 
     # Next determine what type of app it is
     app_type = "unknown"
-    if "local_connection.py" in file_names:
+    if "app.sql" in file_names:
         app_type = "procedure"
-    else:
+    elif "app.py" in file_names:
         app_type = "function"
+    else:
+        print(f"Skipping unknown app type in folder {directory_path}")
+        continue
 
     # Finally deploy the app with the snowcli tool
     print(f"Found {app_type} app in folder {directory_path}")
     print(f"Calling snowcli to deploy the {app_type} app")
-    os.chdir(f"{directory_path}")
+    os.chdir(directory_path)
     # snow login will update the app.toml file with the correct path to the snowsql config file
     os.system(f"snow login -c {root_directory}/config -C dev")
     os.system(f"snow {app_type} create")
