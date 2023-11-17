@@ -1,0 +1,17 @@
+snowsql_config_path = "~/.snowsql/config"
+snowsql_connection_name = "dev"
+
+[default]
+input_parameters = "(total_vaccinations float, avg_daily_vaccinations float)"
+return_type = "float"
+file = "app.zip"
+name = "calculate_vaccination_rate_udf"
+handler = "app.calculate_vaccination_rate"
+execute_as_caller = true
+
+[dev]
+database = "HOL_DB1"
+schema = "ANALYTICS"  # Assuming the schema is specified in the analytics folder
+warehouse = "HOL_WH1"
+role = "HOL_ROLE"
+overwrite = true
