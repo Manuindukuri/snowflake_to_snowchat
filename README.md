@@ -22,7 +22,7 @@ Sarvesh Malpani | 002776061 | 33.33%
 
 # Links
 
-- LiveApp -  http://34.75.29.161:8501
+- LiveApp -  http://34.138.77.87:8501
 - Codelabs - https://codelabs-preview.appspot.com/?file_id=13uqHijBfilRTQC1tcUzJakhdgnErHdQ7kWU1MLHrcMM#3
 
 # Project Tree
