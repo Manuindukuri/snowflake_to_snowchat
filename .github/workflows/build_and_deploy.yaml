@@ -22,6 +22,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+        
+      - name: Install Python packages
+        run: pip install -r requirements.txt
 
 
       - name: Configure snowcli
@@ -41,6 +44,21 @@ jobs:
           echo "rolename = $SNOWSQL_ROLE" >> config
           echo "warehousename = $SNOWSQL_WAREHOUSE" >> config
           echo "dbname = $SNOWSQL_DATABASE" >> config
+
+      # - name: Deloy snowpark apps
+      #   run : 
+      #   echo ${{ secrets.SNOWSQL_ACCOUNT }}
+      #   echo $SNOWSQL_ACCOUNT
+      #   python runsql.py $GITHUB_WORKSPACE snowflake/teardown.sql
+      #   python runsql.py $GITHUB_WORKSPACE snowflake/01_snowflake.sql
+      #   python runsql.py $GITHUB_WORKSPACE snowflake/Data_transformation/covid_vaccinations/01_loading_covid_vaccinations.sql
+      #   python runsql.py $GITHUB_WORKSPACE snowflake/Data_transformation/covid_vaccinations/02_transforming_covid_vaccinations.sql
+
+
+
+
+
+             
 
       - name: Covid Data Pipelines Using Snowpark
         run: python deploy_covid_pipelines.py $GITHUB_WORKSPACE

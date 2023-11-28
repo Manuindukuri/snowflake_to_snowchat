@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 streamlit = "*"
-python-dotenv = "*"
 pandas = "*"
+python-dotenv = "*"
 snowflake-connector-python = "*"
 
 [dev-packages]
