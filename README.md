@@ -1,24 +1,6 @@
-# Assignment-4
-
- ## Snowpark Pipelines
+# Snowpark Pipelines
 
  To facilitate effective collaboration and streamline the development process, we utilized the Snowpark Python guide and the associated GitHub repository for data engineering with Snowpark. The implementation involves a minimum of three SQL processes and three User Defined Functions, leveraging two or all three datasets in the queries. Additionally, the project integrates Git actions for deployment purposes, following a continuous integration and continuous deployment (CI/CD) approach. A custom chatbot is being created using streamlit and deployed to GCP to assist users with table specific queries using natural language.
-
-# Forked Repositories - Snowpark
-
-Manohar - https://github.com/Manuindukuri/snowflake_fork
-
-Prathamesh - https://github.com/PrathamHusky07/Snowpark_Pipelines
-
-Sarvesh - https://github.com/sarvesh3737/sfguide-data-engineering-with-snowpark-python
-
-### Team Information and Contribution 
-
-Name | NUID | Contribution 
---- | --- | --- |
-Manohar Indukuri | 002774942 | 33.33% 
-Prathamesh Kulkarni | 001560684 | 33.33% 
-Sarvesh Malpani | 002776061 | 33.33% 
 
 # Links
 
@@ -89,7 +71,6 @@ Sarvesh Malpani | 002776061 | 33.33%
    ├─ __init__.py
    └─ snowpark_utils.py
 ```
-
 # Environment Variables
 
 ```
@@ -154,6 +135,22 @@ $ cd ..
 ```
 streamlit run AskMe.py
 ```
+
+# Forked Repositories - Snowpark
+
+Manohar - https://github.com/Manuindukuri/snowflake_fork
+
+Prathamesh - https://github.com/PrathamHusky07/Snowpark_Pipelines
+
+Sarvesh - https://github.com/sarvesh3737/sfguide-data-engineering-with-snowpark-python
+
+### Team Information and Contribution 
+
+Name | NUID | Contribution 
+--- | --- | --- |
+Manohar Indukuri | 002774942 | 34% 
+Prathamesh Kulkarni | 001560684 | 33% 
+Sarvesh Malpani | 002776061 | 33% 
 
 # ATTESTATION:
 
