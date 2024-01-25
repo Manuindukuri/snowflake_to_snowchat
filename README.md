@@ -10,10 +10,7 @@
 
  To facilitate effective collaboration and streamline the development process, we utilized the Snowpark Python guide and the associated GitHub repository for data engineering with Snowpark. The implementation involves a minimum of three SQL processes and three User Defined Functions, leveraging two or all three datasets in the queries. Additionally, the project integrates Git actions for deployment purposes, following a continuous integration and continuous deployment (CI/CD) approach. A custom chatbot is being created using streamlit and deployed to GCP to assist users with table specific queries using natural language.
 
-# Links
-
-- LiveApp -  http://34.138.77.87:8501
-- Codelabs - https://codelabs-preview.appspot.com/?file_id=13uqHijBfilRTQC1tcUzJakhdgnErHdQ7kWU1MLHrcMM#3
+Documentation - https://codelabs-preview.appspot.com/?file_id=13uqHijBfilRTQC1tcUzJakhdgnErHdQ7kWU1MLHrcMM#3
 
 # Project Tree
 
@@ -79,8 +76,8 @@
    ├─ __init__.py
    └─ snowpark_utils.py
 ```
-# Environment Variables
 
+# Environment Variables
 ```
 #Openai
 OPENAI_API="Your_Secret_Key"
@@ -144,22 +141,9 @@ $ cd ..
 streamlit run AskMe.py
 ```
 
-# Forked Repositories - Snowpark
-
+## Snowpark
 Manohar - https://github.com/Manuindukuri/snowflake_fork
 
-Prathamesh - https://github.com/PrathamHusky07/Snowpark_Pipelines
 
-Sarvesh - https://github.com/sarvesh3737/sfguide-data-engineering-with-snowpark-python
-
-### Team Information and Contribution 
-
-Name | NUID | Contribution 
---- | --- | --- |
-Manohar Indukuri | 002774942 | 34% 
-Prathamesh Kulkarni | 001560684 | 33% 
-Sarvesh Malpani | 002776061 | 33% 
-
-# ATTESTATION:
-
-WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK.
+## License
+This project is licensed under the MIT License.
